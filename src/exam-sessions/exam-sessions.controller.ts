@@ -47,21 +47,22 @@ export class ExamSessionsController {
     return this.examSessionsService.findOne(id);
   }
 
-  @Post()
-  @ApiOperation({ summary: 'Create an exam session' })
-  create(@Body() dto: CreateExamSessionDto) {
-    return this.examSessionsService.create(dto);
-  }
+  //Disabled for security, I'll use them when admin login is setup
+  // @Post()
+  // @ApiOperation({ summary: 'Create an exam session' })
+  // create(@Body() dto: CreateExamSessionDto) {
+  //   return this.examSessionsService.create(dto);
+  // }
 
-  @Put(':id')
-  @ApiOperation({ summary: 'Update an exam session' })
-  update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateExamSessionDto) {
-    return this.examSessionsService.update(id, dto);
-  }
+  // @Put(':id')
+  // @ApiOperation({ summary: 'Update an exam session' })
+  // update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateExamSessionDto) {
+  //   return this.examSessionsService.update(id, dto);
+  // }
 
-  @Delete(':id')
-  @ApiOperation({ summary: 'Delete an exam session' })
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.examSessionsService.remove(id);
-  }
+  // @Delete(':id')
+  // @ApiOperation({ summary: 'Delete an exam session' })
+  // remove(@Param('id', ParseIntPipe) id: number) {
+  //   return this.examSessionsService.remove(id);
+  // }
 }

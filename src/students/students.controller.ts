@@ -50,21 +50,22 @@ export class StudentsController {
     return this.studentsService.getStudentPerformance(id);
   }
 
-  @Post()
-  @ApiOperation({ summary: 'Create a new student' })
-  create(@Body() dto: CreateStudentDto) {
-    return this.studentsService.create(dto);
-  }
+  //Disabled for security, I'll use them when admin login is setup
+  // @Post()
+  // @ApiOperation({ summary: 'Create a new student' })
+  // create(@Body() dto: CreateStudentDto) {
+  //   return this.studentsService.create(dto);
+  // }
 
-  @Put(':id')
-  @ApiOperation({ summary: 'Update a student' })
-  update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateStudentDto) {
-    return this.studentsService.update(id, dto);
-  }
+  // @Put(':id')
+  // @ApiOperation({ summary: 'Update a student' })
+  // update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateStudentDto) {
+  //   return this.studentsService.update(id, dto);
+  // }
 
-  @Delete(':id')
-  @ApiOperation({ summary: 'Delete a student' })
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.studentsService.remove(id);
-  }
+  // @Delete(':id')
+  // @ApiOperation({ summary: 'Delete a student' })
+  // remove(@Param('id', ParseIntPipe) id: number) {
+  //   return this.studentsService.remove(id);
+  // }
 }

@@ -34,27 +34,28 @@ export class SubjectResultsController {
     return this.subjectResultsService.findOne(id);
   }
 
-  @Post()
-  @ApiOperation({ summary: 'Create a subject result' })
-  create(@Body() dto: CreateSubjectResultDto) {
-    return this.subjectResultsService.create(dto);
-  }
+  //Disabled for security, I'll use them when admin login is setup
+  // @Post()
+  // @ApiOperation({ summary: 'Create a subject result' })
+  // create(@Body() dto: CreateSubjectResultDto) {
+  //   return this.subjectResultsService.create(dto);
+  // }
 
-  @Post('bulk')
-  @ApiOperation({ summary: 'Bulk create subject results' })
-  bulkCreate(@Body() dto: BulkCreateSubjectResultDto) {
-    return this.subjectResultsService.bulkCreate(dto);
-  }
+  // @Post('bulk')
+  // @ApiOperation({ summary: 'Bulk create subject results' })
+  // bulkCreate(@Body() dto: BulkCreateSubjectResultDto) {
+  //   return this.subjectResultsService.bulkCreate(dto);
+  // }
 
-  @Put(':id')
-  @ApiOperation({ summary: 'Update a subject result' })
-  update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateSubjectResultDto) {
-    return this.subjectResultsService.update(id, dto);
-  }
+  // @Put(':id')
+  // @ApiOperation({ summary: 'Update a subject result' })
+  // update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateSubjectResultDto) {
+  //   return this.subjectResultsService.update(id, dto);
+  // }
 
-  @Delete(':id')
-  @ApiOperation({ summary: 'Delete a subject result' })
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.subjectResultsService.remove(id);
-  }
+  // @Delete(':id')
+  // @ApiOperation({ summary: 'Delete a subject result' })
+  // remove(@Param('id', ParseIntPipe) id: number) {
+  //   return this.subjectResultsService.remove(id);
+  // }
 }

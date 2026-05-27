@@ -23,21 +23,22 @@ export class SubjectsController {
     return this.subjectsService.findOne(id);
   }
 
-  @Post()
-  @ApiOperation({ summary: 'Create a new subject' })
-  create(@Body() dto: CreateSubjectDto) {
-    return this.subjectsService.create(dto);
-  }
+  //Disabled for security, I'll use them when admin login is setup
+//   @Post()
+//   @ApiOperation({ summary: 'Create a new subject' })
+//   create(@Body() dto: CreateSubjectDto) {
+//     return this.subjectsService.create(dto);
+//   }
 
-  @Put(':id')
-  @ApiOperation({ summary: 'Update a subject' })
-  update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateSubjectDto) {
-    return this.subjectsService.update(id, dto);
-  }
+//   @Put(':id')
+//   @ApiOperation({ summary: 'Update a subject' })
+//   update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateSubjectDto) {
+//     return this.subjectsService.update(id, dto);
+//   }
 
-  @Delete(':id')
-  @ApiOperation({ summary: 'Delete a subject' })
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.subjectsService.remove(id);
-  }
+//   @Delete(':id')
+//   @ApiOperation({ summary: 'Delete a subject' })
+//   remove(@Param('id', ParseIntPipe) id: number) {
+//     return this.subjectsService.remove(id);
+//   }
 }
