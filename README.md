@@ -2,9 +2,12 @@
 
 A fully-featured NestJS backend for managing student exam results, with rich analytics, rankings, and charting-ready data APIs.
 
+## Frontend of this project is a seperate [Repository](https://github.com/Priyanshu-Batham/edumetric-frontend)
+
 ---
 
-## 🚀 Quick Start
+## Quick Start
+### A docker image is also published on [Docker Hub](https://hub.docker.com/repository/docker/priyanshubatham/npgcranks-backend/general) for ease of use.
 
 ### 1. Install dependencies
 ```bash
@@ -31,19 +34,19 @@ Swagger UI: `http://localhost:3000/api/docs`
 
 ---
 
-## 🗄️ Database
+##  Database
 
 Set `synchronize: false` is already the default — the app connects to your **existing** schema without touching it.
 
 ---
 
-## 📡 API Reference
+##  API Reference
 
 All routes are prefixed with `/api/v1`.
 
 ---
 
-### 👤 Students — `/api/v1/students`
+###  Students — `/api/v1/students`
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -132,27 +135,6 @@ All routes are prefixed with `/api/v1`.
 | GET | `/overall` | All-time CGPA ranking (optionally by course) |
 | GET | `/student/:studentId/rank` | A student's rank in a semester |
 | GET | `/student/:studentId/percentile` | Student percentile in a semester |
-
----
-
-## 🧩 Example: Frontend Usage
-
-```javascript
-// Semester ranking for a chart
-const res = await fetch('/api/v1/rankings/semester/3rd?exam_session=Even+2024');
-const ranks = await res.json();
-// ranks = [{ rank: 1, name: "Rahul", sgpa: 9.8, ... }, ...]
-
-// SGPA distribution for a pie/bar chart
-const dist = await fetch('/api/v1/analytics/sgpa-distribution?semester=3rd');
-// dist = { distribution: [{ range: "9-10", count: 12, percentage: 24.0 }, ...] }
-
-// Compare two students
-const compare = await fetch('/api/v1/analytics/compare-students?ids=1,2,5');
-
-// Subject-wise marks histogram
-const hist = await fetch('/api/v1/analytics/subject/3/histogram?bins=8');
-```
 
 ---
 
